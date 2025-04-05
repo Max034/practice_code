@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onkeyup Test</title>
+    <script>
+        function showText() {
+            var text = document.getElementById("inputBox").value;
+            document.getElementById("output").innerText = text;
+        }
+    </script>
+</head>
+<body>
+    <label for="inputBox">Type something:</label>
+    <input type="text" id="inputBox" onkeyup="showText()">
+    <p>Output: <span id="output"></span></p>
+</body>
+</html>

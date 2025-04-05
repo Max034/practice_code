@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk Image Gallery</title>
+    <style>
+        /* Importing cyberpunk-style font */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+        /* Styling for the body */
+        body {
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0a0a0a, #1f1f1f);
+            color: white;
+            text-align: center;
+        }
+
+        /* Styling for the main heading */
+        h1 {
+            color: #ff007f;
+            text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f;
+            margin: 20px 0;
+        }
+
+        /* Container for images */
+        .st {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Styling for image sections */
+        .t1, .t2 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(15px);
+            margin: 15px;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        /* Section 1 styling (pink cyberpunk glow) */
+        .t1 {
+            background: rgba(255, 0, 127, 0.15);
+            border: 2px solid rgba(255, 0, 127, 0.5);
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.4);
+        }
+
+        /* Section 2 styling (cyan cyberpunk glow) */
+        .t2 {
+            background: rgba(0, 255, 255, 0.15);
+            border: 2px solid rgba(0, 255, 255, 0.5);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+        }
+
+        /* Image styling */
+        .t1 img, .t2 img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.4s ease, box-shadow 0.4s;
+            margin: 8px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(255, 0, 127, 0.3);
+        }
+
+        /* Image hover effect */
+        .t1 img:hover, .t2 img:hover {
+            transform: scale(1.1) rotate(2deg);
+            box-shadow: 0 6px 15px rgba(255, 0, 127, 0.8);
+        }
+
+        /* Modal (popup image viewer) styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Enlarged image inside modal */
+        .modal img {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(255, 0, 127, 0.9);
+            transform: scale(0.8);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Show modal effect */
+        .modal.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal.show img {
+            transform: scale(1);
+        }
+
+        /* Close button styling */
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 50px;
+            color: #ff007f;
+            cursor: pointer;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .close:hover {
+            opacity: 0.7;
+        }
+
+        /* Responsive styling for smaller screens */
+        @media (max-width: 768px) {
+            .t1 img, .t2 img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Cyberpunk Image Gallery</h1>
+    
+    <div class="st">
+        <!-- First set of images -->
+        <div class="t1">
+            <img src="download.jpg" alt="img1" onclick="openModal(this)">
+            <img src="/html/file/Genshin Impact Screenshot 2025.02.15 - 00.28.52.52.png" alt="img2" onclick="openModal(this)">
+            <img src="/html/file/Genshin Impact Screenshot 2025.02.27 - 19.32.50.42.png" alt="img3" onclick="openModal(this)">
+            <img src="/html/file/Genshin Impact Screenshot 2025.02.27 - 19.37.28.18.png" alt="img4" onclick="openModal(this)">
+        </div>
+        
+        <!-- Second set of images -->
+        <div class="t2">
+            <img src="/html/file/Genshin Impact Screenshot 2025.03.26 - 13.41.20.57.png" alt="img6" onclick="openModal(this)">
+            <img src="/html/file/Genshin Impact Screenshot 2025.03.26 - 13.42.22.71.png" alt="img7" onclick="openModal(this)">
+            <img src="/html/file/Genshin Impact Screenshot 2025.03.26 - 13.42.40.93.png" alt="img8" onclick="openModal(this)">
+            <img src="/html/file/Genshin Impact Screenshot 2025.03.26 - 16.47.29.42.png" alt="img9" onclick="openModal(this)">
+        </div>
+    </div>
+
+    <!-- Modal for zoomed-in image -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img id="modalImg">
+    </div>
+
+    <script>
+        /* Function to open modal with clicked image */
+        function openModal(img) {
+            let modal = document.getElementById("imageModal");
+            let modalImg = document.getElementById("modalImg");
+            modalImg.src = img.src;
+            modal.style.display = "flex";
+            setTimeout(() => modal.classList.add("show"), 10);
+        }
+
+        /* Function to close modal */
+        function closeModal() {
+            let modal = document.getElementById("imageModal");
+            modal.classList.remove("show");
+            setTimeout(() => modal.style.display = "none", 300);
+        }
+    </script>
+</body>
+</html>

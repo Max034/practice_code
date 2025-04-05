@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .container {
+            display: flex;
+            border: 2px solid black;
+            height: 200px;
+            background-color: lightgray;
+        }
+        .box {
+            width: 80px;
+            background-color: coral;
+            border: 2px solid black;
+            text-align: center;
+        }
+
+        /* Baseline Example */
+        .baseline-container {
+            align-items: baseline;
+        }
+        .box1 { font-size: 12px; height: 50px; }
+        .box2 { font-size: 24px; height: 80px; }
+        .box3 { font-size: 16px; height: 60px; }
+
+        /* Stretch Example */
+        .stretch-container {
+            align-items: stretch;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>align-items: baseline;</h3>
+    <div class="container baseline-container">
+        <div class="box box1">Text 1</div>
+        <div class="box box2">Text 2</div>
+        <div class="box box3">Text 3</div>
+    </div>
+
+    <h3>align-items: stretch;</h3>
+    <div class="container stretch-container">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+    </div>
+
+</body>
+</html>

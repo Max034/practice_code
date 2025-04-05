@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Table</title>
+</head>
+
+<body class="p-4" style="background-color: #000435; color: white;">
+    <div class="flex justify-between mb-4">
+        <div>
+            <h1 class="text-4xl font-bold">Users</h1>
+            <p class="text-lg">A list of all the users in your account including their name, title, email, and role.</p>
+        </div>
+        <div>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add user</button>
+        </div>
+    </div>
+
+    <div class="w-full overflow-x-auto">
+        <table class="w-full border border-gray-500">
+            <thead>
+                <tr class="border-b">
+                    <th class="p-2 text-left">Name</th>
+                    <th class="p-2 text-left">Title</th>
+                    <th class="p-2 text-left">Email</th>
+                    <th class="p-2 text-left">Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-b">
+                    <td class="p-2"><b>Lind Walton</b></td>
+                    <td class="p-2">Front-end Developer</td>
+                    <td class="p-2">lindsay.walton@example.com</td>
+                    <td class="p-2">Member</td>
+                </tr>
+                <tr class="border-b">
+                    <td class="p-2"><b>Courtney Henry</b></td>
+                    <td class="p-2">Designer</td>
+                    <td class="p-2">courtney.henry@example.com</td>
+                    <td class="p-2">Admin</td>
+                </tr>
+                <tr class="border-b">
+                    <td class="p-2"><b>Courtney Henry</b></td>
+                    <td class="p-2">Designer</td>
+                    <td class="p-2">courtney.henry@example.com</td>
+                    <td class="p-2">Admin</td>
+                </tr>
+                <tr class="border-b">
+                    <td class="p-2"><b>Courtney Henry</b></td>
+                    <td class="p-2">Designer</td>
+                    <td class="p-2">courtney.henry@example.com</td>
+                    <td class="p-2">Admin</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>

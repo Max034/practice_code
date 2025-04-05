@@ -1,0 +1,40 @@
+#ex{
+    color: crimson;          
+}
+.Boxl {
+    padding: 20px;
+    border: solid 5px rgb(0, 247, 255);
+    margin: 0px 0px 0px 300px ;
+    text-align: center;
+    width : 130px;
+    height : 200px
+   
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 8px;
+    border-style: round;
+
+}
+
+.item{
+    padding: 20px;
+    text-align: center;
+    background-color: aquamarine;
+    
+    
+};
+.item:hover{
+    animation: rotateCircle 1s linear infinite;
+    color:blue;
+}
+@keyframes rotateCircle{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(90deg);
+    }
+
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/event.css">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <!-- Inline -->
+    <button onclick ="color();" >Click Me</button>
+    <script>
+        function color() {
+            document.body.style.backgroundColor = "lightblue";
+        }
+    </script>
+
+    <!-- Internal addEventListener -->
+    <button id="myBtn">Event Listener</button>
+    
+    <script>
+        document.getElementById("myBtn").addEventListener("click", function() {
+            alert("Button Clicked! Event Listener");
+        });
+    </script>
+
+    <!-- Toggle Event Listener -->
+
+    <button id="toggleButton">Toggle Event</button>
+
+    <script>
+        let toggleButton = document.getElementById("toggleButton");
+        let isEvent = false;
+
+        function eventAction() {
+            alert("Button Clicked! Event Listener");
+        }
+
+        toggleButton.addEventListener("click", function() {
+            if (isEvent) {
+                myBtn.removeEventListener("click", eventAction);
+                alert("Event listener removed!");
+            } else {
+                myBtn.addEventListener("click", eventAction);
+                alert("Event listener added!");
+            }
+            isEvent = !isEvent;
+        });
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+}
+.div1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    border: 2px solid  black;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgb(111, 205, 226);
+    width: 330px;
+    height: 300px;
+    margin-top: 180px;
+}

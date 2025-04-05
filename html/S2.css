@@ -1,0 +1,37 @@
+/* styles.css */
+body {
+    background: linear-gradient(to right, red, yellow);
+}
+.box {
+    width: 320px;
+    border: 2px solid black;
+    padding: 20px;
+    text-align: center;
+    margin: auto;
+    background: linear-gradient(to right, green, pink);
+    box-shadow: 5px 5px 10px #aaaaaa, -5px -5px 10px #ffffff;
+    border-radius: 10px;
+    position: relative;
+}
+.sub-box {
+    width: 85%;
+    border: 2px solid blue;
+    margin: 10px auto;
+    padding: 10px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: white;
+}
+.sub-box:nth-child(1) {
+    top: 0;
+    z-index: 3;
+    background: linear-gradient(to right, lightblue, lightgreen);
+}
+.sub-box:nth-child(2) {
+    top: -10px;
+    z-index: 2;
+    background: white;
+}

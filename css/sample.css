@@ -1,0 +1,11 @@
+#ex{
+    color: crimson;          
+}
+.Box {
+    padding: auto;
+    border: auto;
+    border: solid;
+    border-color: red;
+    margin: auto;
+    align-content: center;
+}

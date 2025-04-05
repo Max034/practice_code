@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Paragraph Styler</title>
+    <link rel="stylesheet" href="/css/Colorchange.css">
+</head>
+<body>
+    <h1 id="title">Dynamic Paragraph Styler</h1>
+    <div id="container">
+        <div id="div1">
+            <label for="textColor">Select a Color:</label>
+            <select id="textColor">
+                <option value="#ffffff">White</option>
+                <option value="#f1c40f">Gold</option>
+                <option value="#3498db">Sky Blue</option>
+                <option value="#e74c3c">Crimson</option>
+                <option value="#2ecc71">Emerald</option>
+            </select>
+            <label for="fontSize">Font Size:</label>
+            <select id="fontSize">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="big">Big</option>
+            </select>
+            <label for="bgColor">Background Color:</label>
+            <select id="bgColor">
+                <option value="#2c3e50">Navy</option>
+                <option value="#8e44ad">Royal Purple</option>
+                <option value="#d35400">Burnt Orange</option>
+                <option value="#16a085">Teal</option>
+            </select>
+        </div>
+    </div>
+    <div id="footer">This is a small paragraph. Change my Style!</div>
+    <script>
+        document.getElementById("textColor").addEventListener("change", function() {
+            document.getElementById("footer").style.color = this.value;
+        });
+
+        document.getElementById("fontSize").addEventListener("change", function() {
+            let size = this.value;
+            let paragraph = document.getElementById("footer");
+            if (size === "small") paragraph.style.fontSize = "12px";
+            else if (size === "medium") paragraph.style.fontSize = "16px";
+            else if (size === "big") paragraph.style.fontSize = "20px";
+        });
+
+        document.getElementById("bgColor").addEventListener("change", function() {
+            document.getElementById("footer").style.backgroundColor = this.value;
+        });
+    </script>
+</body>
+</html>
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background: linear-gradient(to bottom, #1a1a2e, #16213e);
+        color: white;
+    }
+
+    #title {
+        margin-top: 30px;
+        font-size: 2em;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    #container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+    }
+
+    #div1 {
+        width: 320px;
+        min-height: 320px;
+        background: #222;
+        border-radius: 15px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 15px;
+        flex-direction: column;
+        padding: 20px;
+        text-align: left;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #div1:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    label {
+        align-self: flex-start;
+        font-size: 14px;
+    }
+
+    select {
+        width: 100%;
+        padding: 8px;
+        font-size: 14px;
+        background: #333;
+        color: white;
+        border: 1px solid #555;
+        border-radius: 5px;
+    }
+
+    #footer {
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+        font-size: 16px;
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
+    }
+</style>
